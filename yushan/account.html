@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account — Yushan Colour Co.</title>
+<meta name="description" content="Sign in to your Yushan Colour Co. account.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23E9EAE4'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='10'%20fill='%231E4FA0'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Skip to content</a>
+
+<div class="announcement-bar">Free shipping over $80. Ships from Taipei within 24 hours. Duties prepaid.</div>
+
+<header class="site-header">
+  <div class="header-utility">
+    <div class="header-utility__group">
+      <a href="shipping.html">Shipping</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="stockists.html">Stockists</a>
+    </div>
+    <div class="header-utility__group">
+      <button type="button" class="header-search-toggle" id="search-toggle" aria-expanded="false" aria-controls="search-panel">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor"/><path d="M11 11L15 15" stroke="currentColor" stroke-linecap="round"/></svg>
+        Search
+      </button>
+      <a href="account.html">Account</a>
+      <a href="faq.html">FAQ</a>
+      <button type="button" class="cart-link" data-cart-open aria-haspopup="dialog">Cart (<span class="cart-count">0</span>)</button>
+    </div>
+  </div>
+  <div class="header-logo-row">
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <a href="index.html" class="wordmark-main">玉山 Yushan Colour Co.</a>
+    <button type="button" class="cart-link cart-link--mobile" data-cart-open aria-haspopup="dialog">Cart (<span class="cart-count">0</span>)</button>
+  </div>
+  <nav class="header-nav-row" id="site-nav" data-open="false" aria-label="Main">
+    <button type="button" class="nav-close" id="nav-close" aria-label="Close menu">×</button>
+    <a href="collection.html">Shop all</a>
+    <div class="nav-item" data-menu="single-pans">
+      <div class="nav-item__row">
+        <a href="single-pans.html" class="nav-item__link" aria-haspopup="true" aria-expanded="false" aria-controls="panel-single-pans">Single pans</a>
+        <button type="button" class="nav-item__caret" aria-expanded="false" aria-controls="panel-single-pans" aria-label="Show single pans menu"></button>
+      </div>
+      <div class="nav-panel" id="panel-single-pans" data-panel-for="single-pans"></div>
+    </div>
+    <div class="nav-item" data-menu="sets">
+      <div class="nav-item__row">
+        <a href="sets.html" class="nav-item__link" aria-haspopup="true" aria-expanded="false" aria-controls="panel-sets">Sets &amp; kits</a>
+        <button type="button" class="nav-item__caret" aria-expanded="false" aria-controls="panel-sets" aria-label="Show sets and kits menu"></button>
+      </div>
+      <div class="nav-panel" id="panel-sets" data-panel-for="sets"></div>
+    </div>
+    <div class="nav-item" data-menu="house-minerals">
+      <div class="nav-item__row">
+        <a href="house-minerals.html" class="nav-item__link" aria-haspopup="true" aria-expanded="false" aria-controls="panel-house-minerals">House minerals</a>
+        <button type="button" class="nav-item__caret" aria-expanded="false" aria-controls="panel-house-minerals" aria-label="Show house minerals menu"></button>
+      </div>
+      <div class="nav-panel" id="panel-house-minerals" data-panel-for="house-minerals"></div>
+    </div>
+    <a href="paper.html">Paper</a>
+    <a href="chart.html">The Chart</a>
+    <div class="header-nav-utility">
+      <a href="shipping.html">Shipping</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="stockists.html">Stockists</a>
+      <a href="account.html">Account</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </nav>
+  <div class="search-panel" id="search-panel" hidden>
+    <div class="search-panel__inner">
+      <label class="visually-hidden" for="search-input">Search colours, sets and journal</label>
+      <input type="search" id="search-input" class="search-input" placeholder="Search colours, sets, journal…" autocomplete="off">
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="index.html">Home</a> / <span>Account</span></div>
+
+<main id="main">
+  <div class="account-page">
+    <h1>Sign in</h1>
+    <p class="account-page__note">Enter the email on your order to view its status. Accounts aren't required to buy — checkout stays guest-only.</p>
+    <form id="account-form">
+      <label for="account-email">Email</label>
+      <input type="email" id="account-email" name="email" placeholder="you@example.com" required>
+      <label for="account-password">Password</label>
+      <input type="password" id="account-password" name="password" placeholder="••••••••" required>
+      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    </form>
+    <p class="account-page__result" id="account-result" hidden></p>
+    <p class="account-page__switch">New here? Accounts are created automatically at checkout — there's no separate sign-up.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="wordmark" style="margin-bottom:var(--sp-3);">玉山 Yushan</div>
+      <p style="font-size:13px;color:#C9C5BC;max-width:32ch;">Hand-milled watercolour from Datong District, Taipei. Every Colour Index code and lightfastness result published, including the weak ones.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="collection.html">All colours and sets</a></li>
+        <li><a href="chart.html">The Chart</a></li>
+        <li><a href="product.html?id=dot-card">The Dot Card, $14</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Shipping and returns</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="shipping.html">Shipping and returns</a></li>
+        <li>$9 worldwide, free over $80</li>
+        <li>Duties prepaid</li>
+        <li>60-day return</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hello@yushancolour.com">hello@yushancolour.com</a></li>
+        <li>Datong District, Taipei</li>
+        <li><a href="wholesale.html">Wholesale and stockists</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Yushan Colour Co. Fictional demo brand, no real inventory.</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+
+<div class="cart-scrim" id="cart-scrim"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Cart" aria-hidden="true">
+  <div class="cart-drawer__head">
+    <strong>Cart</strong>
+    <button type="button" class="cart-drawer__close" id="cart-drawer-close" aria-label="Close cart">×</button>
+  </div>
+  <div id="cart-free-ship"></div>
+  <div class="cart-drawer__items" id="cart-items"></div>
+  <div id="cart-upsell-slot"></div>
+  <div class="cart-drawer__foot">
+    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="cart-checkout">Checkout</button>
+    <div class="cart-trust" id="cart-checkout-note">60-day returns. Duties prepaid.</div>
+    <div class="wallet-row"><span>Shop Pay</span><span>Apple Pay</span><span>Google Pay</span><span>PayPal</span></div>
+  </div>
+</aside>
+
+<script src="js/nav.js"></script>
+<script src="js/swatch.js"></script>
+<script src="js/cart.js"></script>
+<script>
+fetch("data/products.json").then((r) => r.json()).then((catalog) => Cart.init(catalog.products));
+document.getElementById("account-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const result = document.getElementById("account-result");
+  result.hidden = false;
+  result.textContent = "Accounts aren't wired up in this demo. Check your order confirmation email, or see the FAQ for order questions.";
+});
+</script>
+</body>
+</html>

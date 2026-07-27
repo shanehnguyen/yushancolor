@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Site Title] — Product Detail Skeleton</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="announcement-bar">[Announcement Bar — promo / shipping message]</div>
+  <div class="header-utility">
+    <ul>
+      <li>[Utility Link — Stores]</li>
+      <li>[Utility Link — Customer Service]</li>
+    </ul>
+    <ul>
+      <li>[Utility Link — Email Sign Up]</li>
+      <li>[Utility Link — Account]</li>
+      <li>[Utility Link — Cart (0)]</li>
+    </ul>
+  </div>
+  <div class="header-logo">[Brand Logo]</div>
+  <nav class="header-nav">
+    <div></div>
+    <div class="header-nav__links">
+      <a>[Nav — Shop All]</a>
+      <a>[Nav — New &amp; Notable]</a>
+      <a>[Nav — Category 1]</a>
+      <a>[Nav — Category 2]</a>
+      <a>[Nav — Category 3]</a>
+      <a>[Nav — Category 4]</a>
+      <a>[Nav — Category 5]</a>
+      <a>[Nav — Gifts]</a>
+      <a>[Nav — Library]</a>
+      <a>[Nav — Experience]</a>
+    </div>
+    <span class="header-nav__search">[Search Icon]</span>
+  </nav>
+</header>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="breadcrumb">[Home] &gt; [Category] &gt; [Subcategory] &gt; [Product Name]</div>
+
+<!-- ============ MAIN PRODUCT SECTION ============ -->
+<section class="pdp-main">
+  <div class="pdp-gallery">
+    <div class="ph ph-tall">[Main Product Photo]</div>
+    <div class="pdp-gallery__thumbs">
+      <div class="ph">[Thumb]</div>
+      <div class="ph">[Thumb]</div>
+      <div class="ph">[Thumb]</div>
+      <div class="ph">[Thumb]</div>
+      <div class="ph">[Thumb]</div>
+    </div>
+  </div>
+
+  <div class="pdp-info">
+    <h1>[Product Name]</h1>
+    <div class="price">[Price]</div>
+    <div class="rating">[★★★★★ Rating Average — X Reviews]</div>
+    <p class="desc">[Product Description — 1–2 sentence summary of the product]</p>
+
+    <div class="size-options">
+      <div class="chip active">[Size 1] — [Price 1]</div>
+      <div class="chip">[Size 2] — [Price 2]</div>
+    </div>
+    <a class="btn btn-solid full">[Add to Cart — Price]</a>
+
+    <div class="pdp-info__suggested">
+      <h4>[Section Label — Suggested Partners]</h4>
+      <div class="suggested-row">
+        <div class="ph ph-square">[Product Photo]</div>
+        <div class="suggested-row__body">
+          <h5>[Product Name]</h5>
+          <p>[Descriptor]</p>
+          <a class="btn btn-solid" style="padding:8px 16px;">[Add to Cart — Price]</a>
+        </div>
+      </div>
+      <div class="suggested-row">
+        <div class="ph ph-square">[Product Photo]</div>
+        <div class="suggested-row__body">
+          <h5>[Product Name]</h5>
+          <p>[Descriptor]</p>
+          <a class="btn btn-solid" style="padding:8px 16px;">[Add to Cart — Price]</a>
+        </div>
+      </div>
+      <div class="suggested-row">
+        <div class="ph ph-square">[Product Photo]</div>
+        <div class="suggested-row__body">
+          <h5>[Bundle Name]</h5>
+          <p>[Descriptor]</p>
+          <a class="btn btn-solid" style="padding:8px 16px;">[Add to Cart — Price]</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TABS ============ -->
+<div class="tabs">
+  <div class="tabs__tab active">[Tab — Description]</div>
+  <div class="tabs__tab">[Tab — Ingredients]</div>
+  <div class="tabs__tab">[Tab — Packaging &amp; Recycling]</div>
+</div>
+<div class="tab-content">
+  <p>[Tab Body Paragraph — extended product description, benefits, formulation notes]</p>
+  <div class="dl-row"><dt>[Label — Skin/Material Feel]</dt><dd>[Value]</dd></div>
+  <div class="dl-row"><dt>[Label — Aroma/Finish]</dt><dd>[Value]</dd></div>
+  <div class="dl-row"><dt>[Label — Key Ingredients/Materials]</dt><dd>[Value]</dd></div>
+</div>
+
+<!-- ============ USAGE SPLIT — image left / how-to right ============ -->
+<section class="split usage-split split--dark">
+  <div class="ph ph-portrait">[Lifestyle Photo — Product in Use]</div>
+  <div class="split__content">
+    <h3 style="font-size:14px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;">[Section Heading — How to Use]</h3>
+    <p style="font-size:15px; color:var(--color-text); margin-bottom:0;">[How-to-use Instructions — short sentence]</p>
+    <dl>
+      <div class="dl-row"><dt>[Label — Storage]</dt><dd>[Value]</dd></div>
+      <div class="dl-row"><dt>[Label — Texture]</dt><dd>[Value]</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ SUGGESTED PARTNERS (large cards) ============ -->
+<section class="section">
+  <div class="section-heading">
+    <h2>[Section Heading — Suggested Partners]</h2>
+  </div>
+  <div class="grid grid-3">
+    <div class="product-card">
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <div class="product-card__desc">[Descriptor]</div>
+      <a class="btn-link">[Discover →]</a>
+    </div>
+    <div class="product-card">
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <div class="product-card__desc">[Descriptor]</div>
+      <a class="btn-link">[Discover →]</a>
+    </div>
+    <div class="product-card">
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <div class="product-card__desc">[Descriptor]</div>
+      <a class="btn-link">[Discover →]</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND STORY BANNER (dark) ============ -->
+<section class="split" style="background:var(--color-dark-bg); color:var(--color-dark-text);">
+  <div class="split__content">
+    <h2 style="color:var(--color-dark-text);">[Headline — Product Heritage Story]</h2>
+    <a class="btn btn-outline-light">[CTA — Find a Purchasing Store]</a>
+  </div>
+  <div class="ph ph-portrait">[Feature Photo — Product Display]</div>
+</section>
+
+<!-- ============ CROSS-SELL TABS + GRID ============ -->
+<section class="section">
+  <div class="tabs" style="justify-content:center; padding:0; border:none; margin-bottom:32px;">
+    <div class="tabs__tab active">[Tab — Others Also Considered]</div>
+    <div class="tabs__tab">[Tab — Recently Viewed]</div>
+  </div>
+  <div class="grid grid-4">
+    <div class="product-card">
+      <div class="product-card__wishlist">♡</div>
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <select class="product-card__size"><option>[Size Option]</option></select>
+      <div class="product-card__price">[Price]</div>
+      <a class="btn btn-solid full">[Add to Cart]</a>
+    </div>
+    <div class="product-card">
+      <div class="product-card__wishlist">♡</div>
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <select class="product-card__size"><option>[Size Option]</option></select>
+      <div class="product-card__price">[Price]</div>
+      <a class="btn btn-solid full">[Add to Cart]</a>
+    </div>
+    <div class="product-card">
+      <div class="product-card__wishlist">♡</div>
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <select class="product-card__size"><option>[Size Option]</option></select>
+      <div class="product-card__price">[Price]</div>
+      <a class="btn btn-solid full">[Add to Cart]</a>
+    </div>
+    <div class="product-card">
+      <div class="product-card__wishlist">♡</div>
+      <div class="ph ph-square">[Product Photo]</div>
+      <div class="product-card__name">[Product Name]</div>
+      <select class="product-card__size"><option>[Size Option]</option></select>
+      <div class="product-card__price">[Price]</div>
+      <a class="btn btn-solid full">[Add to Cart]</a>
+    </div>
+  </div>
+  <div class="carousel-dots"><span class="active"></span><span></span><span></span><span></span></div>
+</section>
+
+<!-- ============ CUSTOMER REVIEWS ============ -->
+<section class="reviews">
+  <h2 style="font-size:22px; margin-bottom:24px;">[Section Heading — Customer Reflections]</h2>
+  <div class="reviews-summary">
+    <div>
+      <div class="rating-bar-row"><span>[5]</span><div class="bar"><span style="width:80%;"></span></div></div>
+      <div class="rating-bar-row"><span>[4]</span><div class="bar"><span style="width:12%;"></span></div></div>
+      <div class="rating-bar-row"><span>[3]</span><div class="bar"><span style="width:5%;"></span></div></div>
+      <div class="rating-bar-row"><span>[2]</span><div class="bar"><span style="width:2%;"></span></div></div>
+      <div class="rating-bar-row"><span>[1]</span><div class="bar"><span style="width:1%;"></span></div></div>
+    </div>
+    <div class="reviews-summary__score">
+      <div class="num">[4.4]</div>
+      <div>[★★★★★]</div>
+      <div style="font-size:11px; color:var(--color-text-muted);">[X Reflections]</div>
+    </div>
+  </div>
+
+  <div class="reviews-toolbar">
+    <input type="text" placeholder="[Search topics and reflections]">
+    <div class="reviews-toolbar__sort">
+      <span>[Sort ▾]</span>
+      <span>[Locale ▾]</span>
+    </div>
+  </div>
+  <div class="chip-row" style="justify-content:flex-start; margin-bottom:24px;">
+    <span class="chip">[Filter Tag]</span>
+    <span class="chip">[Filter Tag]</span>
+    <span class="chip">[Filter Tag]</span>
+    <span class="chip">[Filter Tag]</span>
+    <span class="chip">[Show More Filters]</span>
+  </div>
+
+  <div class="review-item">
+    <div class="review-item__meta"><span>[★★★★★ Category Tag]</span><span>[Time Ago]</span></div>
+    <h5>[Review Title]</h5>
+    <p>[Review Body Text — customer's written feedback]</p>
+  </div>
+
+  <div class="review-item">
+    <div class="review-item__meta"><span>[★★★★★ Category Tag]</span><span>[Time Ago]</span></div>
+    <h5>[Review Title]</h5>
+    <p>[Review Body Text — customer's written feedback]</p>
+    <div class="review-response">
+      <strong>[Response From Brand]</strong>
+      [Brand Response Text — thank you / follow-up note]
+    </div>
+  </div>
+
+  <div class="review-item">
+    <div class="review-item__meta"><span>[★★★★★ Category Tag]</span><span>[Time Ago]</span></div>
+    <h5>[Review Title]</h5>
+    <p>[Review Body Text — customer's written feedback]</p>
+  </div>
+
+  <a class="btn btn-solid load-more">[Load More]</a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h4>[Footer Heading 1 — Orders &amp; Support]</h4>
+      <ul>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>[Footer Heading 2 — About]</h4>
+      <ul>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>[Footer Heading 3 — Sustainability]</h4>
+      <ul>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+        <li><a>[Footer Link]</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-newsletter">
+      <h4>[Footer Heading 4 — Subscribe]</h4>
+      <input type="text" placeholder="[Email Address Placeholder]">
+      <input type="text" placeholder="[Phone Number Placeholder]">
+      <div class="checkbox-row">
+        <input type="checkbox">
+        <span>[Consent / Marketing Opt-in Text]</span>
+      </div>
+      <a class="btn btn-outline-light">[Submit Label]</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">[Legal Text — Copyright, Terms, Privacy Links]</div>
+    <div class="footer-social">[Icon] [Icon] [Icon] [Icon]</div>
+  </div>
+</footer>
+
+</body>
+</html>

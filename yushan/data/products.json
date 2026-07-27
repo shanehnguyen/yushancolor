@@ -1,0 +1,168 @@
+{
+  "sharedPanSpec": {
+    "format": "Half pan, 1.8 ml, hand-poured in three fills so the pan is solid to the bottom",
+    "binder": "Gum arabic, glycerin, longan honey, ox gall",
+    "fillers": "None",
+    "lightfastnessRange": "Blue Wool 6–8",
+    "certification": "ACMI AP non-toxic",
+    "madeIn": "Datong District, Taipei",
+    "batchSize": 40
+  },
+  "shipping": {
+    "origin": "Ships from Taipei within 24 hours",
+    "transit": "6–9 business days to US, UK, EU",
+    "cost": "US$9 worldwide, free over US$80",
+    "freeThreshold": 80,
+    "duty": "Duties and import tax prepaid. Nothing owed on delivery.",
+    "returns": "60-day return, used or unused"
+  },
+  "products": [
+    {
+      "id": "dot-card",
+      "sku": "YSH-DOT-01",
+      "name": "The Dot Card",
+      "rung": "Trial",
+      "price": 14,
+      "isTrial": true,
+      "format": "Painted card, no reusable paint",
+      "shortDescription": "All eighteen colours, hand-painted and labelled, on a single card of Puli cotton.",
+      "description": [
+        "Every colour in the range, painted out by hand on a strip of Puli cotton paper and labelled with its Colour Index code and Blue Wool number. Ships flat in an envelope.",
+        "This is the smallest way to see what the range actually does before buying a set. No pan, no reusable paint, just a true reading of every hue, every granulation and every staining level side by side."
+      ],
+      "benefits": [
+        "All 18 colours in one card, no set commitment",
+        "Every swatch labelled with CI code and Blue Wool rating",
+        "Ships flat, fits in a regular envelope",
+        "The fastest way to see Beitou Sulphur and Yushan Slate granulate before buying full pans"
+      ],
+      "includesPigments": [
+        "ultramarine-blue","phthalo-blue-gs","cerulean-blue","indanthrone-blue","viridian",
+        "phthalo-green-bs","nickel-azo-yellow","hansa-yellow-light","beitou-sulphur","yellow-ochre",
+        "raw-sienna","burnt-sienna","pyrrol-scarlet","quinacridone-rose","perylene-maroon",
+        "cobalt-violet","yushan-slate","paynes-grey"
+      ]
+    },
+    {
+      "id": "landscape-six",
+      "sku": "YSH-SET-LS6",
+      "name": "The Landscape Six",
+      "rung": "Core",
+      "price": 58,
+      "isTrial": false,
+      "format": "Six half pans, tin",
+      "shortDescription": "Six colours built around granulation and distance: two blues, two earths, both house minerals.",
+      "description": [
+        "Six half pans in a tin, chosen for outdoor work where granulation and mixing range matter more than colour count. Ultramarine and Phthalo Blue GS cover the sky range. Yellow Ochre and Burnt Sienna cover the ground. Beitou Sulphur and Yushan Slate sit between the two and do the granulating, textural work neither a straight blue nor a straight earth can do alone.",
+        "Every pan is single-pigment except none in this six, all six are single-source colours with a full Colour Index code on the tin."
+      ],
+      "benefits": [
+        "Full sky-to-ground range in six pans",
+        "Both house minerals included, not sold separately at this price",
+        "Six single-pigment colours, zero convenience mixes",
+        "Fits a shirt pocket sketching kit"
+      ],
+      "includesPigments": [
+        "ultramarine-blue","phthalo-blue-gs","beitou-sulphur","yellow-ochre","burnt-sienna","yushan-slate"
+      ]
+    },
+    {
+      "id": "botanical-eight",
+      "sku": "YSH-SET-BE8",
+      "name": "The Botanical Eight",
+      "rung": "Core",
+      "price": 76,
+      "isTrial": false,
+      "format": "Eight half pans, tin",
+      "shortDescription": "Eight colours built for plant and flower work: two greens, two yellows, two pinks, one earth, one blue.",
+      "description": [
+        "Eight half pans in a tin, chosen for botanical subjects. Viridian and Phthalo Green BS cover the foliage range, cool to warm. Hansa Yellow Light and Nickel Azo Yellow carry the light side of a leaf and the centre of a flower. Quinacridone Rose and Perylene Maroon handle petal colour from pale pink to near-black. Burnt Sienna covers stem and wood tones, and Ultramarine Blue rounds out shadow mixes and the rare true-blue bloom.",
+        "Every pan is single-pigment except none in this eight, all eight carry a full Colour Index code on the tin."
+      ],
+      "benefits": [
+        "Two greens, two yellows, two pinks, one earth, one blue: a complete botanical range in eight pans",
+        "Every colour single-pigment, full CI code on the tin",
+        "Fits a shirt pocket sketching kit"
+      ],
+      "includesPigments": [
+        "hansa-yellow-light", "nickel-azo-yellow", "viridian", "phthalo-green-bs",
+        "quinacridone-rose", "perylene-maroon", "burnt-sienna", "ultramarine-blue"
+      ]
+    },
+    {
+      "id": "the-eighteen",
+      "sku": "YSH-SET-18",
+      "name": "The Eighteen",
+      "rung": "Anchor",
+      "price": 186,
+      "isTrial": false,
+      "isFlagship": true,
+      "format": "Complete range, Taiwan cypress box, brass hinge, 21 × 12 × 3 cm",
+      "shortDescription": "The complete range. Sixteen single-pigment colours and both house minerals, in a Taiwan cypress box.",
+      "description": [
+        "All eighteen colours, in a box milled from Taiwan cypress with a brass hinge, 21 by 12 by 3 centimetres. Sixteen of the eighteen are single-pigment. The other two are Beitou Sulphur and Yushan Slate, the two house minerals with no Colour Index equivalent anywhere else, and Payne's Grey, the one deliberate two-pigment mix in the range, labelled as a mix because it is one.",
+        "Every pan is hand-poured in three fills so it sits solid to the bottom of the well, not just skinned over the surface. This is the set built to be used for years, not restocked colour by colour."
+      ],
+      "benefits": [
+        "16 of 18 colours are single-pigment, listed on the box",
+        "The only place to get both house minerals and the full range together",
+        "Taiwan cypress box with a brass hinge, built to be refilled with single pans",
+        "Complete Blue Wool and CI code reference on the inside lid"
+      ],
+      "includesPigments": [
+        "ultramarine-blue","phthalo-blue-gs","cerulean-blue","indanthrone-blue","viridian",
+        "phthalo-green-bs","nickel-azo-yellow","hansa-yellow-light","beitou-sulphur","yellow-ochre",
+        "raw-sienna","burnt-sienna","pyrrol-scarlet","quinacridone-rose","perylene-maroon",
+        "cobalt-violet","yushan-slate","paynes-grey"
+      ]
+    },
+    {
+      "id": "single-pan",
+      "sku": "YSH-SGL",
+      "name": "Single Pan",
+      "rung": "À la carte",
+      "price": 11,
+      "isTrial": false,
+      "format": "Any single colour, half pan, 1.8 ml",
+      "variantOf": "pigments",
+      "shortDescription": "One colour, one half pan. Restock a well or start with a single hue.",
+      "description": [
+        "A single half pan of any colour in the range, 1.8 ml, hand-poured in three fills. Choose the pigment below."
+      ],
+      "benefits": [
+        "Restock a single well without buying a full set again",
+        "Full CI code, Blue Wool rating and granulation data on every pan",
+        "Same hand-poured fill as every set in the range"
+      ]
+    },
+    {
+      "id": "puli-block",
+      "sku": "YSH-ACC-PULI20",
+      "name": "Puli Block, 20 Sheets",
+      "rung": "Accessory",
+      "price": 32,
+      "isTrial": false,
+      "isPaper": true,
+      "format": "Puli handmade cotton paper block, 300gsm, cold press, 100% cotton, 20 sheets",
+      "shortDescription": "Handmade cotton paper from Puli, Nantou. Cold press, 300gsm, 20 sheets, gummed on all four sides.",
+      "paperSpec": {
+        "gsm": "300gsm",
+        "cotton": "100%",
+        "sizing": "Internally sized, gelatin",
+        "surface": "Cold press",
+        "deckle": "Deckle edge, all four sides",
+        "sheets": "20 sheets",
+        "sheetSize": "18 × 26cm"
+      },
+      "description": [
+        "A 20-sheet block of handmade cotton paper from Puli, Nantou, the town most of Taiwan's traditional papermaking still runs through. Cold press, 300gsm, 100% cotton, gummed on all four sides so it stays flat under a wash.",
+        "Every studio swatch on this site is painted on this paper. It is the surface the range was formulated against."
+      ],
+      "benefits": [
+        "100% cotton, 300gsm, holds heavy granulation without buckling",
+        "Gummed on all four sides, no taping down",
+        "The exact paper used to test every colour in the range"
+      ]
+    }
+  ]
+}

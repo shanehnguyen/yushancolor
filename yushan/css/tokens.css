@@ -1,0 +1,66 @@
+:root {
+  /* Colour — Design Revision Patch v1.1, Fix 3.
+     Surfaces lighter and cleaner; mid-grey at full-page scale read unfinished. */
+  --paper:    #F7F6F2;   /* dominant surface, near-white, neutral-warm */
+  --paper-2:  #EFEEE9;   /* section bands only, never the dominant surface */
+  --paper-3:  #E4E3DD;   /* rare, for one contrast band */
+  --dark:     #14100D;   /* full-bleed dark sections. Not pure black. */
+
+  --ink:      #1A1815;   /* headings only */
+  --ink-2:    #4A4741;   /* body copy — never pure black */
+  --ink-3:    #8A867E;   /* labels, meta, eyebrows */
+
+  --mist:     #B7C0BC;
+  --rule:     #DEDCD5;   /* used sparingly — Fix 5 */
+  --pb29:     #1E4FA0;
+  --pbr7:     #93502F;
+  --ok:       #3D6B4A;
+  --white:    #FFFFFF;
+
+  /* Type — Fix 6/7. Newsreader carries display, price and title weight; Public Sans carries
+     every functional UI surface; JetBrains Mono is now restricted to CI codes and Blue Wool
+     values only (Fix 6) — nothing else may reference --font-data. */
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body:    "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-data:    "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Spacing scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+  --sp-11: 168px;
+
+  /* Layout */
+  --container-max: 1280px;
+  --radius: 0px; /* Fix 5 — the only rounded things on the site are the organic swatches */
+  --border: 1px solid var(--rule);
+
+  /* Granulation → grain overlay opacity, per Section 5.3 of the build brief */
+  --gran-none: 0.02;
+  --gran-light: 0.12;
+  --gran-medium: 0.22;
+  --gran-heavy: 0.40;
+  --gran-veryheavy: 0.58;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+
+  /* Z-index */
+  --z-header: 40;
+  --z-drawer: 60;
+  --z-sticky-atc: 30;
+
+  /* Taiwanese layer, applied as skin — 鐵花窗 grille lattice, 花磚 tile grid.
+     Inline SVG, low contrast, referenced everywhere via these two variables. */
+  --pattern-grille: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3E%3Cg%20fill='none'%20stroke='%231A1815'%20stroke-opacity='0.35'%20stroke-width='1'%3E%3Cpath%20d='M0%2032H64M32%200V64M0%200L64%2064M64%200L0%2064'/%3E%3Ccircle%20cx='32'%20cy='32'%20r='10'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern-tile: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='96'%20height='96'%20viewBox='0%200%2096%2096'%3E%3Cg%20fill='none'%20stroke='%231A1815'%20stroke-opacity='0.12'%20stroke-width='1'%3E%3Ccircle%20cx='24'%20cy='24'%20r='16'/%3E%3Ccircle%20cx='72'%20cy='24'%20r='16'/%3E%3Ccircle%20cx='24'%20cy='72'%20r='16'/%3E%3Ccircle%20cx='72'%20cy='72'%20r='16'/%3E%3Ccircle%20cx='48'%20cy='48'%20r='16'/%3E%3C/g%3E%3C/svg%3E");
+}

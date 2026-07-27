@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Yushan Colour Co.</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23E9EAE4'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='10'%20fill='%231E4FA0'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<div class="announcement-bar">Free shipping over $80. Ships from Taipei within 24 hours. Duties prepaid.</div>
+
+<header class="site-header">
+  <div class="header-utility">
+    <div class="header-utility__group">
+      <a href="shipping.html">Shipping</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="stockists.html">Stockists</a>
+    </div>
+    <div class="header-utility__group">
+      <button type="button" class="header-search-toggle" id="search-toggle" aria-expanded="false" aria-controls="search-panel">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor"/><path d="M11 11L15 15" stroke="currentColor" stroke-linecap="round"/></svg>
+        Search
+      </button>
+      <a href="account.html">Account</a>
+      <a href="faq.html">FAQ</a>
+      <button type="button" class="cart-link" data-cart-open aria-haspopup="dialog">Cart (<span class="cart-count">0</span>)</button>
+    </div>
+  </div>
+  <div class="header-logo-row">
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <a href="index.html" class="wordmark-main">玉山 Yushan Colour Co.</a>
+    <button type="button" class="cart-link cart-link--mobile" data-cart-open aria-haspopup="dialog">Cart (<span class="cart-count">0</span>)</button>
+  </div>
+  <nav class="header-nav-row" id="site-nav" data-open="false" aria-label="Main">
+    <button type="button" class="nav-close" id="nav-close" aria-label="Close menu">×</button>
+    <a href="collection.html">Shop all</a>
+    <div class="nav-item" data-menu="single-pans">
+      <div class="nav-item__row">
+        <a href="single-pans.html" class="nav-item__link" aria-haspopup="true" aria-expanded="false" aria-controls="panel-single-pans">Single pans</a>
+        <button type="button" class="nav-item__caret" aria-expanded="false" aria-controls="panel-single-pans" aria-label="Show single pans menu"></button>
+      </div>
+      <div class="nav-panel" id="panel-single-pans" data-panel-for="single-pans"></div>
+    </div>
+    <div class="nav-item" data-menu="sets">
+      <div class="nav-item__row">
+        <a href="sets.html" class="nav-item__link" aria-haspopup="true" aria-expanded="false" aria-controls="panel-sets">Sets &amp; kits</a>
+        <button type="button" class="nav-item__caret" aria-expanded="false" aria-controls="panel-sets" aria-label="Show sets and kits menu"></button>
+      </div>
+      <div class="nav-panel" id="panel-sets" data-panel-for="sets"></div>
+    </div>
+    <div class="nav-item" data-menu="house-minerals">
+      <div class="nav-item__row">
+        <a href="house-minerals.html" class="nav-item__link" aria-haspopup="true" aria-expanded="false" aria-controls="panel-house-minerals">House minerals</a>
+        <button type="button" class="nav-item__caret" aria-expanded="false" aria-controls="panel-house-minerals" aria-label="Show house minerals menu"></button>
+      </div>
+      <div class="nav-panel" id="panel-house-minerals" data-panel-for="house-minerals"></div>
+    </div>
+    <a href="paper.html">Paper</a>
+    <a href="chart.html">The Chart</a>
+    <div class="header-nav-utility">
+      <a href="shipping.html">Shipping</a>
+      <a href="wholesale.html">Wholesale</a>
+      <a href="stockists.html">Stockists</a>
+      <a href="account.html">Account</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </nav>
+  <div class="search-panel" id="search-panel" hidden>
+    <div class="search-panel__inner">
+      <label class="visually-hidden" for="search-input">Search colours, sets and journal</label>
+      <input type="search" id="search-input" class="search-input" placeholder="Search colours, sets, journal…" autocomplete="off">
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="state-page">
+    <div class="eyebrow">404</div>
+    <h1 style="margin:var(--sp-3) 0;">That page doesn't exist</h1>
+    <p style="color:var(--ink-2);">The link may be old, or the address was typed wrong. Here's where painters usually start instead.</p>
+    <a class="btn btn-outline" href="index.html" style="margin-top:var(--sp-4);">Back to the homepage</a>
+  </div>
+
+  <section class="section">
+    <div class="section__head section__head--center">
+      <h2>Popular starting points</h2>
+    </div>
+    <div class="related-grid" id="popular-grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="wordmark" style="margin-bottom:var(--sp-3);">玉山 Yushan</div>
+      <p style="font-size:13px;color:#C9C5BC;max-width:32ch;">Hand-milled watercolour from Datong District, Taipei.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="collection.html">All colours and sets</a></li>
+        <li><a href="chart.html">The Chart</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hello@yushancolour.com">hello@yushancolour.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="shipping.html">Shipping and returns</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© Yushan Colour Co. Fictional demo brand, no real inventory.</span>
+  </div>
+</footer>
+
+<div class="cart-scrim" id="cart-scrim"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Cart" aria-hidden="true">
+  <div class="cart-drawer__head">
+    <strong>Cart</strong>
+    <button type="button" class="cart-drawer__close" id="cart-drawer-close" aria-label="Close cart">×</button>
+  </div>
+  <div id="cart-free-ship"></div>
+  <div class="cart-drawer__items" id="cart-items"></div>
+  <div id="cart-upsell-slot"></div>
+  <div class="cart-drawer__foot">
+    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+    <button type="button" class="btn btn-primary btn-lg btn-block" id="cart-checkout">Checkout</button>
+    <div class="cart-trust" id="cart-checkout-note">60-day returns. Duties prepaid.</div>
+    <div class="wallet-row"><span>Shop Pay</span><span>Apple Pay</span><span>Google Pay</span><span>PayPal</span></div>
+  </div>
+</aside>
+
+<script src="js/nav.js"></script>
+<script src="js/swatch.js"></script>
+<script src="js/cart.js"></script>
+<script>
+(async function () {
+  const [catalog, pigments] = await Promise.all([
+    fetch("data/products.json").then((r) => r.json()),
+    fetch("data/pigments.json").then((r) => r.json()),
+  ]);
+  Cart.init(catalog.products);
+  const pigmentsById = Object.fromEntries(pigments.map((p) => [p.id, p]));
+  const ids = ["the-eighteen", "dot-card", "landscape-six"];
+  const grid = document.getElementById("popular-grid");
+  ids.forEach((id) => {
+    const p = catalog.products.find((pr) => pr.id === id);
+    const a = document.createElement("a");
+    a.className = "product-card";
+    a.href = `product.html?id=${id}`;
+    const imgWrap = document.createElement("div");
+    imgWrap.className = "product-card__img";
+    a.appendChild(imgWrap);
+    a.insertAdjacentHTML("beforeend", `
+      <div class="product-card__rung">${p.rung}</div>
+      <div class="product-card__name">${p.name}</div>
+      <div class="product-card__price">$${p.price.toFixed(2)}</div>`);
+    grid.appendChild(a);
+    const tin = document.createElement("div");
+    imgWrap.appendChild(tin);
+    renderTinGrid(tin, p.includesPigments || [], pigmentsById);
+  });
+  const featured = pigments.find((p) => p.id === "ultramarine-blue");
+  const featuredCard = document.createElement("a");
+  featuredCard.className = "product-card";
+  featuredCard.href = `product.html?id=single-pan&variant=${featured.id}`;
+  const sw = renderSwatch(featured);
+  sw.style.width = "100%"; sw.style.marginBottom = "var(--sp-3)";
+  featuredCard.appendChild(sw);
+  featuredCard.insertAdjacentHTML("beforeend", `
+    <div class="product-card__rung">${featured.ci}</div>
+    <div class="product-card__name">${featured.name}</div>
+    <div class="product-card__price">$11.00</div>`);
+  grid.appendChild(featuredCard);
+})();
+</script>
+</body>
+</html>
