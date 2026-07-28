@@ -165,7 +165,7 @@
     const p = catalog.products.find((pr) => pr.id === id);
     const a = document.createElement("a");
     a.className = "product-card";
-    a.href = `product.html?id=${id}`;
+    a.href = productUrl(id);
     const imgWrap = document.createElement("div");
     imgWrap.className = "product-card__img";
     a.appendChild(imgWrap);
@@ -181,7 +181,7 @@
   const featured = pigments.find((p) => p.id === "ultramarine-blue");
   const featuredCard = document.createElement("a");
   featuredCard.className = "product-card";
-  featuredCard.href = `product.html?id=single-pan&variant=${featured.id}`;
+  featuredCard.href = productUrl("single-pan", featured.id);
   const sw = renderSwatch(featured);
   sw.style.width = "100%"; sw.style.marginBottom = "var(--sp-3)";
   featuredCard.appendChild(sw);
@@ -192,5 +192,6 @@
   grid.appendChild(featuredCard);
 })();
 </script>
+<script src="js/email-popup.js"></script>
 </body>
 </html>

@@ -1,3 +1,12 @@
+/* Canonical URL for a product or single-pan variant — every page that links
+   to a PDP must agree on this, since each product/variant is prerendered
+   to its own static file (see scripts/prerender.js) rather than served
+   through product.html?id=... query params. */
+function productUrl(productId, variantId) {
+  if (productId === "single-pan" && variantId) return `product-single-pan-${variantId}.html`;
+  return `product-${productId}.html`;
+}
+
 const GRANULATION_OPACITY = {
   "None": 0.02,
   "Light": 0.12,

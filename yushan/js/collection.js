@@ -83,7 +83,7 @@
     const wrap = document.createElement("div");
     wrap.className = "product-card collection-card";
     wrap.innerHTML = `
-      <a class="collection-card__link" href="product.html?id=single-pan&variant=${p.id}">
+      <a class="collection-card__link" href="${productUrl("single-pan", p.id)}">
         <div class="collection-card__img collection-card__img--swatch">
           <span class="collection-card__tag">${p.granulation}</span>
           <div class="layer main"></div>
@@ -104,7 +104,7 @@
     const wrap = document.createElement("div");
     wrap.className = "product-card collection-card";
     wrap.innerHTML = `
-      <a class="collection-card__link" href="product.html?id=${p.id}">
+      <a class="collection-card__link" href="${productUrl(p.id)}">
         <div class="collection-card__img"><div class="tin-grid"></div></div>
         <div class="product-card__rung">${p.rung}</div>
         <div class="product-card__name">${p.name}</div>

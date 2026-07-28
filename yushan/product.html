@@ -108,6 +108,8 @@
 
       <div class="price-row" id="pdp-price-row"></div>
 
+      <div class="batch-info" id="pdp-batch-info"></div>
+
       <div id="pdp-variant-picker"></div>
 
       <ul class="benefit-list" id="pdp-benefits"></ul>
@@ -205,9 +207,9 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="section__head section__head--center"><h2>Related</h2></div>
-    <div class="related-grid" id="related-grid"></div>
+  <section class="section" id="related-section">
+    <div class="section__head section__head--center"><h2 id="related-heading">Related</h2></div>
+    <div class="related-grid related-grid--single" id="related-grid"></div>
   </section>
 </main>
 
@@ -222,7 +224,7 @@
       <ul>
         <li><a href="collection.html">All colours and sets</a></li>
         <li><a href="chart.html">The Chart</a></li>
-        <li><a href="product.html?id=dot-card">The Dot Card, $14</a></li>
+        <li><a href="product-dot-card.html">The Dot Card, $14</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -251,7 +253,13 @@
   </div>
 </footer>
 
-<button type="button" class="btn btn-primary btn-lg btn-block sticky-atc" id="pdp-atc-sticky"></button>
+<div class="sticky-atc" id="sticky-atc-bar" data-visible="false">
+  <div class="sticky-atc__info">
+    <span class="sticky-atc__name" id="sticky-atc-name"></span>
+    <span class="sticky-atc__price" id="sticky-atc-price"></span>
+  </div>
+  <button type="button" class="btn btn-primary" id="pdp-atc-sticky"></button>
+</div>
 
 <div class="cart-scrim" id="cart-scrim"></div>
 <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Cart" aria-hidden="true">
@@ -274,5 +282,6 @@
 <script src="js/swatch.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/pdp.js"></script>
+<script src="js/email-popup.js"></script>
 </body>
 </html>

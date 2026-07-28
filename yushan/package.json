@@ -1,0 +1,7 @@
+{
+  "name": "yushan-colour-co",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/prerender.js"
+  }
+}

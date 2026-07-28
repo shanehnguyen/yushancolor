@@ -23,7 +23,7 @@
           <div class="spec-table__row"><dt>Staining</dt><dd>${p.staining}</dd></div>
         </div>
         <p style="font-size:13px;color:var(--ink-2);margin:var(--sp-4) 0;">${p.note}</p>
-        <a class="btn btn-primary" href="product.html?id=single-pan&variant=${p.id}">Shop ${p.name}, $11</a>
+        <a class="btn btn-primary" href="${productUrl("single-pan", p.id)}">Shop ${p.name}, $11</a>
       </div>`;
     const sw = document.createElement("div");
     sw.className = "swatch";

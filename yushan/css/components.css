@@ -292,7 +292,7 @@ h3 { font-size: 19px; font-weight: 400; }
   font-size: 14px;
   overflow: hidden;
 }
-.gallery__main:not(:has(img)):not(:has(.tin-grid)):not(.pattern-tile) { padding: var(--sp-4); border: var(--border); }
+.gallery__main:not(:has(img)):not(:has(.tin-grid)):not(:has(.swatch-strip)):not(:has(.spec-slide)):not(.pattern-tile) { padding: var(--sp-4); border: var(--border); }
 
 /* Tin grid — a set's own swatches arranged as pans in a tin, never a stock photo */
 .tin-grid { position: absolute; inset: 0; display: grid; gap: 3px; background: var(--paper-2); padding: var(--sp-4); }
@@ -306,6 +306,7 @@ h3 { font-size: 19px; font-weight: 400; }
 }
 @media (max-width: 600px) { .gallery__thumbs { grid-template-columns: repeat(4, 1fr); } }
 .gallery__thumb {
+  position: relative;
   aspect-ratio: 1/1;
   min-width: 0;
   background: var(--paper-2);
@@ -425,23 +426,57 @@ h3 { font-size: 19px; font-weight: 400; }
 .cross-sell__body strong { display: block; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
 .cross-sell .btn { flex-shrink: 0; padding: 10px 16px; font-size: 13px; }
 
-/* Sticky ATC on small screens */
+/* Sticky ATC on small screens — only once the main buy button scrolls out of view */
 .sticky-atc {
   display: none;
   position: fixed;
   left: 0; right: 0; bottom: 0;
   z-index: var(--z-sticky-atc);
   border-top: var(--border);
+  background: var(--paper);
   border-radius: 0;
-  padding: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
   align-items: center;
+  justify-content: space-between;
   gap: var(--sp-3);
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
 }
 @media (max-width: 900px) {
   .sticky-atc { display: flex; }
+  .sticky-atc[data-visible="true"] { transform: translateY(0); }
   .pdp { padding-bottom: var(--sp-9); }
 }
+.sticky-atc__info { display: flex; flex-direction: column; min-width: 0; }
+.sticky-atc__name { font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .sticky-atc__price { font-family: var(--font-display); font-size: 18px; white-space: nowrap; }
+.sticky-atc .btn { flex-shrink: 0; padding: 12px 20px; }
+
+/* Batch scarcity — a live-computed batch number and next-mill date near the buy box */
+.batch-info {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: var(--sp-3); margin-bottom: var(--sp-4);
+  background: var(--paper-2); border-radius: var(--radius);
+}
+.batch-info__num { font-family: var(--font-data); font-size: 13px; color: var(--ink); }
+.batch-info__detail { font-size: 12.5px; color: var(--ink-2); }
+
+/* Gallery slide variants: swatch strip (set contents painted out) and paper spec card */
+.swatch-strip {
+  position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: var(--sp-4); padding: var(--sp-4); background: var(--paper-2);
+}
+.swatch-strip .set-chart__item { width: 72px; }
+.swatch-strip .swatch { width: 72px; height: 72px; }
+.spec-slide {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; background: var(--paper-2); text-align: center; padding: var(--sp-4);
+}
+.spec-slide strong { font-family: var(--font-display); font-size: 18px; font-weight: 400; }
+.spec-slide span { font-size: 13px; color: var(--ink-2); }
+
+/* Related — a single relevant cross-sell, not a grid of four */
+.related-grid--single { grid-template-columns: minmax(240px, 360px); justify-content: center; }
 
 /* ============================================
    SWATCH / WASH RENDERING
@@ -1020,7 +1055,34 @@ h3 { font-size: 19px; font-weight: 400; }
    ============================================ */
 @media print {
   .announcement-bar, .site-header, .cart-scrim, .cart-drawer, .sticky-atc,
-  .site-footer, .chart-readout, .chart-actions, .nav-toggle, .breadcrumb { display: none !important; }
+  .site-footer, .chart-readout, .chart-actions, .nav-toggle, .breadcrumb,
+  .email-popup-overlay { display: none !important; }
   body { background: #fff; }
   .chart-page-grid { grid-template-columns: repeat(6, 1fr) !important; }
 }
+
+/* Email popup — exit-intent / timed, printable pigment index, no discount gate */
+.email-popup-overlay {
+  position: fixed; inset: 0; z-index: 70;
+  background: rgba(26, 24, 21, 0.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--sp-5);
+}
+.email-popup {
+  position: relative;
+  background: var(--paper);
+  max-width: 440px; width: 100%;
+  padding: var(--sp-7) var(--sp-6) var(--sp-6);
+  text-align: center;
+  border-radius: var(--radius);
+}
+.email-popup h2 { margin-bottom: var(--sp-3); }
+.email-popup p { color: var(--ink-2); font-size: 15px; margin-bottom: var(--sp-5); }
+.email-popup__close {
+  position: absolute; top: var(--sp-3); right: var(--sp-3);
+  background: none; border: none; font-size: 22px; line-height: 1; cursor: pointer; color: var(--ink-3);
+  width: 32px; height: 32px;
+}
+.email-popup form { display: flex; gap: var(--sp-2); }
+.email-popup input { flex: 1; padding: 13px 14px; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--paper); }
+.email-popup__note { font-size: 13px; color: var(--ink-2); margin-top: var(--sp-3); margin-bottom: 0; }

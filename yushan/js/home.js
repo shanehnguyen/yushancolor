@@ -37,7 +37,7 @@
       const p = pigments.find((pig) => pig.id === id);
       const card = document.createElement("a");
       card.className = "product-card";
-      card.href = `product.html?id=single-pan&variant=${p.id}`;
+      card.href = `${productUrl("single-pan", p.id)}`;
       const sw = renderSwatch(p);
       sw.style.width = "100%";
       sw.style.marginBottom = "var(--sp-3)";

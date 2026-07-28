@@ -94,7 +94,7 @@
     <h2>If you run a shop</h2>
     <p>That could change. If you carry artist-grade watercolour and want to talk about being the first physical stockist, the conversation starts in the same place as any wholesale order: email <a href="mailto:hello@yushancolour.com">hello@yushancolour.com</a> with your shop name and location, or read more on the <a href="wholesale.html">wholesale page</a> first.</p>
     <h2>In the meantime</h2>
-    <p>Every colour, spec, and Blue Wool result is on the <a href="chart.html">Chart</a>, and the <a href="product.html?id=dot-card">Dot Card</a> is a $14 way to see all eighteen colours painted out before ordering a set.</p>
+    <p>Every colour, spec, and Blue Wool result is on the <a href="chart.html">Chart</a>, and the <a href="product-dot-card.html">Dot Card</a> is a $14 way to see all eighteen colours painted out before ordering a set.</p>
   </div>
 </main>
 
@@ -109,7 +109,7 @@
       <ul>
         <li><a href="collection.html">All colours and sets</a></li>
         <li><a href="chart.html">The Chart</a></li>
-        <li><a href="product.html?id=dot-card">The Dot Card, $14</a></li>
+        <li><a href="product-dot-card.html">The Dot Card, $14</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -160,5 +160,6 @@
 <script>
 fetch("data/products.json").then((r) => r.json()).then((catalog) => Cart.init(catalog.products));
 </script>
+<script src="js/email-popup.js"></script>
 </body>
 </html>

@@ -8,11 +8,11 @@
 
   const pigmentsById = Object.fromEntries(pigments.map((p) => [p.id, p]));
   const products = catalog.products;
-  const productId = params.get("id") || document.body.dataset.defaultProduct || "the-eighteen";
+  const productId = params.get("id") || document.body.dataset.productId || document.body.dataset.defaultProduct || "the-eighteen";
   const product = products.find((p) => p.id === productId) || products.find((p) => p.isFlagship);
 
   const isVariantProduct = product.variantOf === "pigments";
-  let variantId = isVariantProduct ? (params.get("variant") || "ultramarine-blue") : null;
+  let variantId = isVariantProduct ? (params.get("variant") || document.body.dataset.variantId || "ultramarine-blue") : null;
 
   function money(n) { return `$${n.toFixed(2)}`; }
 
@@ -39,44 +39,78 @@
     return sw;
   }
 
+  // A studio lifestyle photo, reused sitewide (never a stand-in for the product itself,
+  // only for scale/context) — keeps to the "only three photographs sitewide" rule.
+  const LIFESTYLE_PHOTO = {
+    url: "https://images.pexels.com/photos/22690831/pexels-photo-22690831.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1000",
+    alt: "Close-up of a painter mixing colour on a palette in the workshop, for scale",
+  };
+  function lifestyleSlide() {
+    const img = document.createElement("img");
+    img.src = LIFESTYLE_PHOTO.url;
+    img.alt = LIFESTYLE_PHOTO.alt;
+    img.loading = "lazy";
+    return img;
+  }
+  function swatchStripSlide(ids) {
+    const strip = document.createElement("div");
+    strip.className = "swatch-strip";
+    ids.forEach((id) => {
+      const p = pigmentsById[id];
+      if (!p) return;
+      const cell = renderSwatch(p, { label: true });
+      strip.appendChild(cell);
+    });
+    return strip;
+  }
+  function paperSpecSlide() {
+    const ps = product.paperSpec;
+    const card = document.createElement("div");
+    card.className = "spec-slide";
+    card.innerHTML = `<strong>${ps.gsm}, ${ps.cotton} cotton</strong><span>${ps.surface}, ${ps.deckle}</span><span>${ps.sheets}, ${ps.sheetSize}</span>`;
+    return card;
+  }
+
   function renderGallery() {
     const main = document.getElementById("gallery-main");
     const thumbs = document.getElementById("gallery-thumbs");
+    main.className = "gallery__main";
 
+    let slides;
     if (isVariantProduct) {
       const pig = currentPigment();
-      const slides = [
-        { mode: "masstone", alt: `${pig.name} at masstone` },
-        { mode: "dilution", alt: `${pig.name} diluted` },
-        { mode: "wet", alt: `${pig.name} wet-in-wet, showing granulation` },
+      slides = [
+        { alt: `${pig.name} at masstone`, build: () => gallerySwatch(pig, "masstone") },
+        { alt: `${pig.name} diluted`, build: () => gallerySwatch(pig, "dilution") },
+        { alt: `${pig.name} wet-in-wet, showing granulation`, build: () => gallerySwatch(pig, "wet") },
+        { alt: LIFESTYLE_PHOTO.alt, build: lifestyleSlide },
       ];
-      function setMain(i) {
-        main.innerHTML = "";
-        main.appendChild(gallerySwatch(pig, slides[i].mode));
-        [...thumbs.children].forEach((el, idx) => el.setAttribute("aria-current", String(idx === i)));
-      }
-      thumbs.innerHTML = slides.map((s, i) => `<button type="button" class="gallery__thumb" aria-current="${i === 0}" aria-label="${s.alt}"></button>`).join("");
-      [...thumbs.children].forEach((btn, i) => {
-        btn.appendChild(gallerySwatch(pig, slides[i].mode));
-        btn.addEventListener("click", () => setMain(i));
-      });
-      setMain(0);
-      return;
+    } else if (product.isPaper) {
+      slides = [
+        { alt: `${product.name} texture`, build: () => { const el = document.createElement("div"); el.className = "pattern-tile"; el.style.width = "100%"; el.style.height = "100%"; el.style.opacity = "0.7"; return el; } },
+        { alt: `${product.name} specifications`, build: paperSpecSlide },
+        { alt: LIFESTYLE_PHOTO.alt, build: lifestyleSlide },
+      ];
+    } else {
+      const ids = product.includesPigments || [];
+      slides = [
+        { alt: `${product.name}, pans in the tin`, build: () => { const tin = document.createElement("div"); renderTinGrid(tin, ids, pigmentsById); return tin; } },
+        { alt: `${product.name}, every colour swatched on paper`, build: () => swatchStripSlide(ids) },
+        { alt: LIFESTYLE_PHOTO.alt, build: lifestyleSlide },
+      ];
     }
 
-    // Multi-pan sets: a grid of the set's own swatches, arranged as pans in a tin.
-    const ids = product.includesPigments || [];
-    main.innerHTML = "";
-    if (ids.length) {
-      const tin = document.createElement("div");
-      main.appendChild(tin);
-      renderTinGrid(tin, ids, pigmentsById);
-    } else {
-      // No pigments to show (e.g. paper): a plain woven texture, never an empty gallery.
-      main.classList.add("pattern-tile");
-      main.style.opacity = "0.7";
+    function setMain(i) {
+      main.innerHTML = "";
+      main.appendChild(slides[i].build());
+      [...thumbs.children].forEach((el, idx) => el.setAttribute("aria-current", String(idx === i)));
     }
-    thumbs.innerHTML = "";
+    thumbs.innerHTML = slides.map((s, i) => `<button type="button" class="gallery__thumb" aria-current="${i === 0}" aria-label="${s.alt}"></button>`).join("");
+    [...thumbs.children].forEach((btn, i) => {
+      btn.appendChild(slides[i].build());
+      btn.addEventListener("click", () => setMain(i));
+    });
+    setMain(0);
   }
 
   // ---------- Descriptor ----------
@@ -232,7 +266,7 @@
           <div class="spec-table__row"><dt>Staining</dt><dd>${p.staining}</dd></div>
           <div class="spec-table__row"><dt>Note</dt><dd>${p.note}</dd></div>
         </div>
-        <a class="btn btn-outline" href="product.html?id=single-pan&variant=${p.id}">Shop ${p.name}, $11</a>`;
+        <a class="btn btn-outline" href="${productUrl("single-pan", p.id)}">Shop ${p.name}, $11</a>`;
     }
     product.includesPigments.forEach((id) => {
       const p = pigmentsById[id];
@@ -244,33 +278,58 @@
     showPigment(pigmentsById[product.includesPigments[0]]);
   }
 
-  // ---------- Related — generated swatches, never repeated stock photography ----------
+  // ---------- Related — exactly one relevant cross-sell, never a generic grid ----------
+  function pickRelated() {
+    if (isVariantProduct) {
+      const pig = currentPigment();
+      const homeSet = products.find((p) =>
+        (p.id === "landscape-six" || p.id === "botanical-eight") &&
+        p.includesPigments && p.includesPigments.includes(pig.id)
+      );
+      return homeSet || products.find((p) => p.id === "dot-card");
+    }
+    if (product.id === "dot-card") return products.find((p) => p.id === "the-eighteen");
+    if (product.id === "puli-block") return products.find((p) => p.id === "dot-card");
+    return products.find((p) => p.id === "dot-card");
+  }
+
   function renderRelated() {
-    const others = products.filter((p) => p.id !== product.id && p.id !== "single-pan").slice(0, 4);
+    const section = document.getElementById("related-section");
+    const heading = document.getElementById("related-heading");
     const grid = document.getElementById("related-grid");
+    const p = pickRelated();
+    if (!p || p.id === product.id) { if (section) section.style.display = "none"; return; }
+    if (section) section.style.display = "";
+
+    if (isVariantProduct) {
+      heading.textContent = `${p.name} includes this colour`;
+    } else if (product.id === "dot-card") {
+      heading.textContent = "Ready to commit to a set?";
+    } else {
+      heading.textContent = "Still deciding?";
+    }
+
     grid.innerHTML = "";
-    others.forEach((p) => {
-      const a = document.createElement("a");
-      a.className = "product-card";
-      a.href = `product.html?id=${p.id}`;
-      const imgWrap = document.createElement("div");
-      imgWrap.className = "product-card__img";
-      if (p.includesPigments && p.includesPigments.length) {
-        const tin = document.createElement("div");
-        tin.className = "tin-grid--small";
-        imgWrap.appendChild(tin);
-        renderTinGrid(tin, p.includesPigments, pigmentsById, 8);
-      } else {
-        imgWrap.classList.add("pattern-tile");
-        imgWrap.style.opacity = "0.7";
-      }
-      a.appendChild(imgWrap);
-      a.insertAdjacentHTML("beforeend", `
-        <div class="product-card__rung">${p.rung}</div>
-        <div class="product-card__name">${p.name}</div>
-        <div class="product-card__price">${money(p.price)}</div>`);
-      grid.appendChild(a);
-    });
+    const a = document.createElement("a");
+    a.className = "product-card related-card";
+    a.href = `${productUrl(p.id)}`;
+    const imgWrap = document.createElement("div");
+    imgWrap.className = "product-card__img";
+    if (p.includesPigments && p.includesPigments.length) {
+      const tin = document.createElement("div");
+      imgWrap.appendChild(tin);
+      renderTinGrid(tin, p.includesPigments, pigmentsById, 8);
+    } else {
+      imgWrap.classList.add("pattern-tile");
+      imgWrap.style.opacity = "0.7";
+    }
+    a.appendChild(imgWrap);
+    a.insertAdjacentHTML("beforeend", `
+      <div class="product-card__rung">${p.rung}</div>
+      <div class="product-card__name">${p.name}</div>
+      <div class="product-card__desc">${p.shortDescription || ""}</div>
+      <div class="product-card__price">${money(p.price)}</div>`);
+    grid.appendChild(a);
   }
 
   // ---------- Breadcrumb / title / ATC ----------
@@ -281,9 +340,32 @@
     document.getElementById("pdp-rung").textContent = product.rung;
     document.title = `${document.getElementById("pdp-title").textContent} — Yushan Colour Co.`;
 
-    const label = `Add to cart, ${money(product.price)}`;
-    document.getElementById("pdp-atc").textContent = label;
-    document.getElementById("pdp-atc-sticky").textContent = label;
+    document.getElementById("pdp-atc").textContent = `Add to cart, ${money(product.price)}`;
+    document.getElementById("pdp-atc-sticky").textContent = "Add to cart";
+    const stickyName = document.getElementById("sticky-atc-name");
+    const stickyPrice = document.getElementById("sticky-atc-price");
+    if (stickyName) stickyName.textContent = document.getElementById("pdp-title").textContent;
+    if (stickyPrice) stickyPrice.textContent = money(product.price);
+  }
+
+  // ---------- Batch scarcity — a real computed batch number and next-mill date,
+  // not a static "handmade in batches" line. Batches mill every 14 days. ----------
+  function renderBatchInfo() {
+    const el = document.getElementById("pdp-batch-info");
+    if (!el) return;
+    if (product.isPaper) { el.style.display = "none"; return; }
+    el.style.display = "";
+    const spec = catalog.sharedPanSpec;
+    const MS_PER_BATCH = 14 * 24 * 60 * 60 * 1000;
+    const EPOCH = new Date("2019-03-04T00:00:00Z").getTime();
+    const now = Date.now();
+    const batchNumber = Math.floor((now - EPOCH) / MS_PER_BATCH) + 1;
+    const batchStart = EPOCH + (batchNumber - 1) * MS_PER_BATCH;
+    const nextBatch = new Date(batchStart + MS_PER_BATCH);
+    const dateFmt = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" });
+    el.innerHTML = `
+      <span class="batch-info__num">Batch No. ${batchNumber}</span>
+      <span class="batch-info__detail">${spec.batchSize} pans per batch &middot; next batch mills ${dateFmt.format(nextBatch)}</span>`;
   }
 
   // ---------- JSON-LD ----------
@@ -323,6 +405,7 @@
     renderSpec();
     renderSetChart();
     renderJSONLD();
+    renderBatchInfo();
   }
 
   renderAll();
@@ -330,6 +413,19 @@
   renderDotCardCrossSell();
   renderLightfastGrid("lightfast-grid", pigmentsById);
   renderRelated();
+
+  // ---------- Sticky mobile ATC — appears only once the main Add-to-cart button
+  // has scrolled out of view, so it doesn't double up with the primary CTA. ----------
+  (function wireStickyATC() {
+    const bar = document.getElementById("sticky-atc-bar");
+    const anchor = document.getElementById("pdp-atc");
+    if (!bar || !anchor || !("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver(
+      ([entry]) => { bar.dataset.visible = String(!entry.isIntersecting && entry.boundingClientRect.top < 0); },
+      { threshold: 0 }
+    );
+    io.observe(anchor);
+  })();
 
   // ---------- Cart wiring ----------
   Cart.init(products);

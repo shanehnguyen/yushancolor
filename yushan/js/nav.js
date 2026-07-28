@@ -92,7 +92,7 @@
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.className = "nav-swatch-link";
-        a.href = `product.html?id=single-pan&variant=${p.id}`;
+        a.href = `${productUrl("single-pan", p.id)}`;
         const sw = renderSwatch(p);
         a.appendChild(sw);
         a.insertAdjacentHTML("beforeend", `<span>${p.name}</span><span class="ci mono">${p.ci}</span>`);
@@ -118,7 +118,7 @@
     sets.forEach((p) => {
       const a = document.createElement("a");
       a.className = "nav-set-card";
-      a.href = `product.html?id=${p.id}`;
+      a.href = `${productUrl(p.id)}`;
       const imgWrap = document.createElement("div");
       imgWrap.className = "nav-set-card__img";
       a.appendChild(imgWrap);
@@ -143,7 +143,7 @@
     minerals.forEach((p) => {
       const a = document.createElement("a");
       a.className = "nav-mineral-card";
-      a.href = `product.html?id=single-pan&variant=${p.id}`;
+      a.href = `${productUrl("single-pan", p.id)}`;
       const sw = renderSwatch(p);
       a.appendChild(sw);
       a.insertAdjacentHTML("beforeend", `<span><strong>${p.name}</strong><p>${p.note}</p></span>`);
@@ -291,8 +291,8 @@
         return `<div class="search-results__group"><h4>${label}</h4><ul>${items.map(renderItem).join("")}</ul></div>`;
       }
       results.innerHTML =
-        group("Colours", colours, (p) => `<li><a href="product.html?id=single-pan&variant=${p.id}"><span>${p.name}</span><span class="ci mono">${p.ci}</span></a></li>`) +
-        group("Sets", sets, (p) => `<li><a href="product.html?id=${p.id}"><span>${p.name}</span><span>$${p.price.toFixed(2)}</span></a></li>`) +
+        group("Colours", colours, (p) => `<li><a href="${productUrl("single-pan", p.id)}"><span>${p.name}</span><span class="ci mono">${p.ci}</span></a></li>`) +
+        group("Sets", sets, (p) => `<li><a href="${productUrl(p.id)}"><span>${p.name}</span><span>$${p.price.toFixed(2)}</span></a></li>`) +
         group("Journal", posts, (j) => `<li><a href="${j.url}"><span>${j.title}</span></a></li>`);
     }
     input.addEventListener("input", () => render(input.value));

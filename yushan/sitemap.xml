@@ -3,15 +3,40 @@
   <url><loc>https://yushancolour.com/index.html</loc><priority>1.0</priority></url>
   <url><loc>https://yushancolour.com/collection.html</loc><priority>0.9</priority></url>
   <url><loc>https://yushancolour.com/chart.html</loc><priority>0.9</priority></url>
-  <url><loc>https://yushancolour.com/product.html?id=the-eighteen</loc><priority>0.8</priority></url>
-  <url><loc>https://yushancolour.com/product.html?id=dot-card</loc><priority>0.8</priority></url>
-  <url><loc>https://yushancolour.com/product.html?id=landscape-six</loc><priority>0.8</priority></url>
-  <url><loc>https://yushancolour.com/product.html?id=botanical-eight</loc><priority>0.7</priority></url>
-  <url><loc>https://yushancolour.com/product.html?id=single-pan</loc><priority>0.7</priority></url>
-  <url><loc>https://yushancolour.com/product.html?id=puli-block</loc><priority>0.7</priority></url>
+  <url><loc>https://yushancolour.com/single-pans.html</loc><priority>0.7</priority></url>
+  <url><loc>https://yushancolour.com/sets.html</loc><priority>0.7</priority></url>
+  <url><loc>https://yushancolour.com/house-minerals.html</loc><priority>0.7</priority></url>
+  <url><loc>https://yushancolour.com/paper.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/journal.html</loc><priority>0.5</priority></url>
+  <url><loc>https://yushancolour.com/journal-blue-wool.html</loc><priority>0.4</priority></url>
+  <url><loc>https://yushancolour.com/journal-beitou-sulphur.html</loc><priority>0.4</priority></url>
   <url><loc>https://yushancolour.com/faq.html</loc><priority>0.6</priority></url>
   <url><loc>https://yushancolour.com/shipping.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/stockists.html</loc><priority>0.4</priority></url>
   <url><loc>https://yushancolour.com/wholesale.html</loc><priority>0.4</priority></url>
   <url><loc>https://yushancolour.com/privacy.html</loc><priority>0.2</priority></url>
   <url><loc>https://yushancolour.com/terms.html</loc><priority>0.2</priority></url>
+  <url><loc>https://yushancolour.com/product-dot-card.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yushancolour.com/product-landscape-six.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yushancolour.com/product-botanical-eight.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yushancolour.com/product-the-eighteen.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yushancolour.com/product-puli-block.html</loc><priority>0.8</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-ultramarine-blue.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-phthalo-blue-gs.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-cerulean-blue.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-indanthrone-blue.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-viridian.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-phthalo-green-bs.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-nickel-azo-yellow.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-hansa-yellow-light.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-beitou-sulphur.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-yellow-ochre.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-raw-sienna.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-burnt-sienna.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-pyrrol-scarlet.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-quinacridone-rose.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-perylene-maroon.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-cobalt-violet.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-yushan-slate.html</loc><priority>0.6</priority></url>
+  <url><loc>https://yushancolour.com/product-single-pan-paynes-grey.html</loc><priority>0.6</priority></url>
 </urlset>
