@@ -59,9 +59,21 @@
     });
   }
 
-  document.getElementById("email-form").addEventListener("submit", (e) => {
+  document.getElementById("email-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    document.getElementById("email-note").textContent = "You're on the list. Check your inbox to confirm.";
-    e.target.reset();
+    const note = document.getElementById("email-note");
+    const email = document.getElementById("email-input").value;
+    note.textContent = "Sending…";
+    try {
+      const result = await Web3Forms.submit({
+        subject: "Yushan — pigment index request",
+        from_name: "Yushan site — homepage signup",
+        email,
+      });
+      note.textContent = result.success ? "You're on the list. Check your inbox to confirm." : "Something went wrong — try again, or email hello@yushancolour.com.";
+      if (result.success) e.target.reset();
+    } catch {
+      note.textContent = "Something went wrong — try again, or email hello@yushancolour.com.";
+    }
   });
 })();

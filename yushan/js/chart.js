@@ -15,13 +15,13 @@
       <div class="chart-readout__body">
         <div class="eyebrow">${p.house ? "House mineral" : "Colour Index"}</div>
         <h3 style="margin-bottom:var(--sp-3);">${p.name}</h3>
-        <div class="spec-table">
+        <dl class="spec-table">
           <div class="spec-table__row"><dt>CI code</dt><dd class="mono">${p.ci}</dd></div>
           <div class="spec-table__row"><dt>Lightfastness</dt><dd>${blueWoolText(p.blueWool)}</dd></div>
           <div class="spec-table__row"><dt>Transparency</dt><dd>${p.transparency}</dd></div>
           <div class="spec-table__row"><dt>Granulation</dt><dd>${p.granulation}</dd></div>
           <div class="spec-table__row"><dt>Staining</dt><dd>${p.staining}</dd></div>
-        </div>
+        </dl>
         <p style="font-size:13px;color:var(--ink-2);margin:var(--sp-4) 0;">${p.note}</p>
         <a class="btn btn-primary" href="${productUrl("single-pan", p.id)}">Shop ${p.name}, $11</a>
       </div>`;

@@ -33,11 +33,27 @@
   overlay.addEventListener("click", (e) => { if (e.target === overlay) hide(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.hidden) hide(); });
 
-  overlay.querySelector("#email-popup-form").addEventListener("submit", (e) => {
+  overlay.querySelector("#email-popup-form").addEventListener("submit", async (e) => {
     e.preventDefault();
-    overlay.querySelector("#email-popup-note").textContent = "You're on the list. Check your inbox to confirm.";
-    e.target.reset();
-    setTimeout(hide, 1800);
+    const note = overlay.querySelector("#email-popup-note");
+    const email = overlay.querySelector("#email-popup-input").value;
+    note.textContent = "Sending…";
+    try {
+      const result = await Web3Forms.submit({
+        subject: "Yushan — pigment index request",
+        from_name: "Yushan site — exit-intent popup",
+        email,
+      });
+      if (result.success) {
+        note.textContent = "You're on the list. Check your inbox to confirm.";
+        e.target.reset();
+        setTimeout(hide, 1800);
+      } else {
+        note.textContent = "Something went wrong — try again, or email hello@yushancolour.com.";
+      }
+    } catch {
+      note.textContent = "Something went wrong — try again, or email hello@yushancolour.com.";
+    }
   });
 
   // Exit intent: mouse leaves through the top of the viewport (desktop).

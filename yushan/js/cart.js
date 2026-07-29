@@ -141,17 +141,46 @@ const Cart = (() => {
 
     const checkoutBtn = document.getElementById("cart-checkout");
     if (checkoutBtn) {
-      checkoutBtn.addEventListener("click", () => {
+      checkoutBtn.addEventListener("click", async () => {
+        const note = document.getElementById("cart-checkout-note");
         if (state.items.length === 0) {
-          document.getElementById("cart-checkout-note").textContent = "Your cart is empty.";
+          note.textContent = "Your cart is empty.";
           return;
         }
+        const emailInput = document.getElementById("cart-email");
+        const email = emailInput.value.trim();
+        if (!emailInput.checkValidity() || !email) {
+          note.textContent = "Enter a valid email for your order confirmation.";
+          emailInput.focus();
+          return;
+        }
+
         const order = "YSH-" + Math.floor(100000 + Math.random() * 900000);
         const count = state.items.reduce((n, i) => n + i.qty, 0);
+        const lines = state.items.map((i) => `${i.qty}x ${i.name}${i.variantLabel ? ` (${i.variantLabel})` : ""} — ${money(i.unitPrice * i.qty)}`).join("\n");
+
+        checkoutBtn.disabled = true;
+        note.textContent = "Confirming order…";
+        let confirmed = false;
+        try {
+          const result = await Web3Forms.submit({
+            subject: `Yushan — order ${order}`,
+            from_name: "Yushan checkout",
+            email,
+            order,
+            message: `Order ${order}\n\n${lines}\n\nSubtotal: ${money(subtotal())}`,
+          });
+          confirmed = !!result.success;
+        } catch {
+          confirmed = false;
+        }
+
         const params = new URLSearchParams({
           order,
           items: String(count),
           subtotal: subtotal().toFixed(2),
+          email,
+          confirmed: String(confirmed),
         });
         location.href = `thank-you.html?${params.toString()}`;
       });

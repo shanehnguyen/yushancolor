@@ -257,7 +257,7 @@
     const readout = document.getElementById("set-chart-readout");
     function showPigment(p) {
       readout.innerHTML = `
-        <div class="spec-table" style="max-width:420px;">
+        <dl class="spec-table" style="max-width:420px;">
           <div class="spec-table__row"><dt>Colour</dt><dd>${p.name}${p.house ? " (house mineral)" : ""}</dd></div>
           <div class="spec-table__row"><dt>Colour Index</dt><dd class="mono">${p.ci}</dd></div>
           <div class="spec-table__row"><dt>Lightfastness</dt><dd>${blueWoolText(p.blueWool)}</dd></div>
@@ -265,7 +265,7 @@
           <div class="spec-table__row"><dt>Granulation</dt><dd>${p.granulation}</dd></div>
           <div class="spec-table__row"><dt>Staining</dt><dd>${p.staining}</dd></div>
           <div class="spec-table__row"><dt>Note</dt><dd>${p.note}</dd></div>
-        </div>
+        </dl>
         <a class="btn btn-outline" href="${productUrl("single-pan", p.id)}">Shop ${p.name}, $11</a>`;
     }
     product.includesPigments.forEach((id) => {

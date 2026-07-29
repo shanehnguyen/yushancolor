@@ -197,6 +197,7 @@ function renderProductPage(shell, product, pigment) {
   html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHTML(desc)}">`);
   html = html.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHTML(title)}">`);
   html = html.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHTML(desc)}">`);
+  html = html.replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="https://yushancolour.com/${productUrl(product.id, pigment ? pigment.id : null)}">`);
   html = html.replace("</head>", `<script type="application/ld+json">${jsonLD(product, pigment)}</script>\n</head>`);
   html = html.replace("<body>", `<body data-product-id="${product.id}"${pigment ? ` data-variant-id="${pigment.id}"` : ""}>`);
 

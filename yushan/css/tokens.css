@@ -8,7 +8,7 @@
 
   --ink:      #1A1815;   /* headings only */
   --ink-2:    #4A4741;   /* body copy — never pure black */
-  --ink-3:    #8A867E;   /* labels, meta, eyebrows */
+  --ink-3:    #6B675F;   /* labels, meta, eyebrows — darkened from #8A867E to clear 4.5:1 on --paper (WCAG AA) */
 
   --mist:     #B7C0BC;
   --rule:     #DEDCD5;   /* used sparingly — Fix 5 */
