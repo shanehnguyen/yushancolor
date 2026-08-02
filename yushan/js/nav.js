@@ -68,7 +68,6 @@
     const products = catalog.products;
     buildSinglePansPanel(pigments);
     buildSetsPanel(products, pigments);
-    buildHouseMineralsPanel(pigments);
     wireSearch(pigments, products);
   });
 
@@ -127,27 +126,6 @@
       const tin = document.createElement("div");
       imgWrap.appendChild(tin);
       renderTinGrid(tin, p.includesPigments || [], pigmentsById, 8);
-    });
-    inner.appendChild(grid);
-    el.appendChild(inner);
-  }
-
-  function buildHouseMineralsPanel(pigments) {
-    const el = document.getElementById("panel-house-minerals");
-    if (!el) return;
-    const minerals = pigments.filter((p) => p.house);
-    const inner = document.createElement("div");
-    inner.className = "nav-panel__inner";
-    const grid = document.createElement("div");
-    grid.className = "nav-mineral-grid";
-    minerals.forEach((p) => {
-      const a = document.createElement("a");
-      a.className = "nav-mineral-card";
-      a.href = `${productUrl("single-pan", p.id)}`;
-      const sw = renderSwatch(p);
-      a.appendChild(sw);
-      a.insertAdjacentHTML("beforeend", `<span><strong>${p.name}</strong><p>${p.note}</p></span>`);
-      grid.appendChild(a);
     });
     inner.appendChild(grid);
     el.appendChild(inner);

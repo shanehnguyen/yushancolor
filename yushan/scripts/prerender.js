@@ -75,11 +75,24 @@ function swatchDefsSVG(pigment) {
       <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.1 0 0 0 -0.1"/>
     </filter></defs></svg>`;
 }
+// Mirrors js/swatch.js's ensureFiltersFor() cache — a pigment's filter <defs> must be
+// emitted at most once per page, since the id is keyed only on pigment.id and the same
+// pigment's swatch can appear more than once on one page (lightfast grid, cross-sell,
+// related tin grid). Reset via resetSwatchDefsCache() at the start of each page render.
+let emittedSwatchDefs = new Set();
+function resetSwatchDefsCache() {
+  emittedSwatchDefs = new Set();
+}
 function swatchDivHTML(pigment) {
   const opacity = GRANULATION_OPACITY[pigment.granulation] ?? GRANULATION_OPACITY.None;
   const dark = adjustHex(pigment.hex, 0.22), darker = adjustHex(pigment.hex, 0.4);
   const style = `--wash-hex:${pigment.hex};--wash-dark:${dark};--wash-darker:${darker};--grain-opacity:${opacity};filter:saturate(0.86) url(#ragged-${pigment.id});width:100%;height:100%;position:absolute;inset:0;`;
-  return `${swatchDefsSVG(pigment)}<div class="swatch" role="img" aria-label="${escapeHTML(pigment.name)}, ${pigment.ci}, Blue Wool ${pigment.blueWool}" style="${style}">
+  let defs = "";
+  if (!emittedSwatchDefs.has(pigment.id)) {
+    emittedSwatchDefs.add(pigment.id);
+    defs = swatchDefsSVG(pigment);
+  }
+  return `${defs}<div class="swatch" role="img" aria-label="${escapeHTML(pigment.name)}, ${pigment.ci}, Blue Wool ${pigment.blueWool}" style="${style}">
     <span class="swatch__base"></span><span class="swatch__pool"></span>
     <span class="swatch__grain" style="filter:url(#grain-${pigment.id})"></span></div>`;
 }
@@ -189,11 +202,12 @@ function jsonLD(product, pigment) {
 
 // ---------- Render one product page from the shared product.html shell ----------
 function renderProductPage(shell, product, pigment) {
+  resetSwatchDefsCache();
   let html = shell;
   const title = pigment ? `${pigment.name}, Single Pan` : product.name;
   const desc = pigment ? pigment.note : product.shortDescription;
 
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHTML(title)} — Yushan Colour Co.</title>`);
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHTML(title)} | Yushan Colour Co.</title>`);
   html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHTML(desc)}">`);
   html = html.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHTML(title)}">`);
   html = html.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHTML(desc)}">`);
@@ -257,6 +271,7 @@ function buildFilterGroupHTML(values, name) {
   return values.map((v) => `<label class="filter-option"><input type="checkbox" name="${name}" value="${v}"><span>${v}</span></label>`).join("");
 }
 function renderCollectionPage(shell) {
+  resetSwatchDefsCache();
   let html = shell;
   const grid = pigments.map(pigmentCardHTML).join("");
   html = setInner(html, "collection-grid", grid);
@@ -318,7 +333,7 @@ function main() {
 function writeSitemap() {
   const STATIC_PAGES = [
     ["index.html", "1.0"], ["collection.html", "0.9"], ["chart.html", "0.9"],
-    ["single-pans.html", "0.7"], ["sets.html", "0.7"], ["house-minerals.html", "0.7"], ["paper.html", "0.6"],
+    ["single-pans.html", "0.7"], ["sets.html", "0.7"], ["paper.html", "0.6"],
     ["journal.html", "0.5"], ["journal-blue-wool.html", "0.4"], ["journal-beitou-sulphur.html", "0.4"],
     ["faq.html", "0.6"], ["shipping.html", "0.6"], ["stockists.html", "0.4"], ["wholesale.html", "0.4"],
     ["privacy.html", "0.2"], ["terms.html", "0.2"],

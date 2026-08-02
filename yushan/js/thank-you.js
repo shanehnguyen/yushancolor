@@ -19,8 +19,8 @@
   const note = document.getElementById("thank-you-note");
   if (note && order) {
     note.textContent = email && confirmed
-      ? `Checkout isn't connected to a payment processor yet, so no payment was taken and nothing will ship — but we've sent a confirmation to ${email}.`
-      : "Checkout isn't connected to a payment processor yet, so no payment was taken and nothing will ship — but here's what your order confirmation looks like.";
+      ? `Checkout isn't connected to a payment processor yet, so no payment was taken and nothing will ship. We've sent a confirmation to ${email}.`
+      : "Checkout isn't connected to a payment processor yet, so no payment was taken and nothing will ship. Here's what your order confirmation looks like.";
   }
 
   const catalog = await fetch("data/products.json").then((r) => r.json());

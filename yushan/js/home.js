@@ -66,14 +66,14 @@
     note.textContent = "Sending…";
     try {
       const result = await Web3Forms.submit({
-        subject: "Yushan — pigment index request",
-        from_name: "Yushan site — homepage signup",
+        subject: "Yushan: Pigment index request",
+        from_name: "Yushan site (homepage signup)",
         email,
       });
-      note.textContent = result.success ? "You're on the list. Check your inbox to confirm." : "Something went wrong — try again, or email hello@yushancolour.com.";
+      note.textContent = result.success ? "You're on the list. Check your inbox to confirm." : "Something went wrong. Try again, or email hello@yushancolour.com.";
       if (result.success) e.target.reset();
     } catch {
-      note.textContent = "Something went wrong — try again, or email hello@yushancolour.com.";
+      note.textContent = "Something went wrong. Try again, or email hello@yushancolour.com.";
     }
   });
 })();

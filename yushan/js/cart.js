@@ -157,14 +157,14 @@ const Cart = (() => {
 
         const order = "YSH-" + Math.floor(100000 + Math.random() * 900000);
         const count = state.items.reduce((n, i) => n + i.qty, 0);
-        const lines = state.items.map((i) => `${i.qty}x ${i.name}${i.variantLabel ? ` (${i.variantLabel})` : ""} — ${money(i.unitPrice * i.qty)}`).join("\n");
+        const lines = state.items.map((i) => `${i.qty}x ${i.name}${i.variantLabel ? ` (${i.variantLabel})` : ""}: ${money(i.unitPrice * i.qty)}`).join("\n");
 
         checkoutBtn.disabled = true;
         note.textContent = "Confirming order…";
         let confirmed = false;
         try {
           const result = await Web3Forms.submit({
-            subject: `Yushan — order ${order}`,
+            subject: `Yushan: Order ${order}`,
             from_name: "Yushan checkout",
             email,
             order,

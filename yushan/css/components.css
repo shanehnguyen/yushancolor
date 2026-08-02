@@ -217,13 +217,6 @@ h3 { font-size: 19px; font-weight: 400; }
 .nav-set-card strong { font-family: var(--font-display); font-weight: 400; font-size: 15px; }
 .nav-set-card span { font-size: 13px; color: var(--ink-2); }
 
-.nav-mineral-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
-.nav-mineral-card { display: flex; gap: var(--sp-4); align-items: center; }
-.nav-mineral-card:hover { text-decoration: underline; }
-.nav-mineral-card .swatch { width: 72px; height: 58px; flex-shrink: 0; }
-.nav-mineral-card strong { display: block; font-family: var(--font-display); font-weight: 400; font-size: 17px; margin-bottom: 4px; text-decoration: none; }
-.nav-mineral-card p { font-size: 13px; color: var(--ink-2); }
-
 /* Search overlay */
 .search-panel {
   position: absolute; top: 100%; left: 0; right: 0;
@@ -749,7 +742,6 @@ h3 { font-size: 19px; font-weight: 400; }
   .nav-panel[data-mobile-open="true"] { display: block; border-bottom: 1px solid var(--rule); padding-bottom: var(--sp-5); }
   .nav-hue-groups { grid-template-columns: 1fr 1fr; gap: var(--sp-5); }
   .nav-set-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav-mineral-grid { grid-template-columns: 1fr; gap: var(--sp-5); }
 
   .header-nav-utility {
     display: flex; flex-direction: column; gap: var(--sp-1);

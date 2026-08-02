@@ -42,7 +42,7 @@
   // A studio lifestyle photo, reused sitewide (never a stand-in for the product itself,
   // only for scale/context) — keeps to the "only three photographs sitewide" rule.
   const LIFESTYLE_PHOTO = {
-    url: "https://images.pexels.com/photos/22690831/pexels-photo-22690831.jpeg?auto=compress&cs=tinysrgb&h=1000&w=1000",
+    url: "assets/images/workshop-mixing.jpg",
     alt: "Close-up of a painter mixing colour on a palette in the workshop, for scale",
   };
   function lifestyleSlide() {
@@ -338,7 +338,7 @@
       ? `${pigmentsById[variantId].name}, Single Pan` : product.name;
     document.getElementById("pdp-breadcrumb-name").textContent = product.name;
     document.getElementById("pdp-rung").textContent = product.rung;
-    document.title = `${document.getElementById("pdp-title").textContent} — Yushan Colour Co.`;
+    document.title = `${document.getElementById("pdp-title").textContent} | Yushan Colour Co.`;
 
     document.getElementById("pdp-atc").textContent = `Add to cart, ${money(product.price)}`;
     document.getElementById("pdp-atc-sticky").textContent = "Add to cart";

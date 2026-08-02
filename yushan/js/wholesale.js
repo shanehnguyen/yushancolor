@@ -9,18 +9,18 @@
     const data = new FormData(form);
     try {
       const result = await Web3Forms.submit({
-        subject: "Yushan — wholesale/press inquiry",
-        from_name: "Yushan site — wholesale page",
+        subject: "Yushan: Wholesale/press inquiry",
+        from_name: "Yushan site (wholesale page)",
         name: data.get("name"),
         email: data.get("email"),
         shop: data.get("shop"),
         location: data.get("location"),
         message: data.get("message"),
       });
-      note.textContent = result.success ? "Sent. We'll reply by email." : "Something went wrong — try again, or email hello@yushancolour.com.";
+      note.textContent = result.success ? "Sent. We'll reply by email." : "Something went wrong. Try again, or email hello@yushancolour.com.";
       if (result.success) form.reset();
     } catch {
-      note.textContent = "Something went wrong — try again, or email hello@yushancolour.com.";
+      note.textContent = "Something went wrong. Try again, or email hello@yushancolour.com.";
     }
   });
 })();
