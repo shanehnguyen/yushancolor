@@ -148,8 +148,8 @@ function lightfastGridHTML() {
 
 // ---------- Canonical URL for a product / single-pan variant ----------
 function productUrl(productId, variantId) {
-  if (productId === "single-pan" && variantId) return `product-single-pan-${variantId}.html`;
-  return `product-${productId}.html`;
+  if (productId === "single-pan" && variantId) return `product-single-pan-${variantId}`;
+  return `product-${productId}`;
 }
 
 // ---------- Spec rows, mirroring js/pdp.js renderSpec() ----------
@@ -332,11 +332,11 @@ function main() {
 // ---------- Sitemap — every static page, generated so it never drifts from what's actually built ----------
 function writeSitemap() {
   const STATIC_PAGES = [
-    ["index.html", "1.0"], ["collection.html", "0.9"], ["chart.html", "0.9"],
-    ["single-pans.html", "0.7"], ["sets.html", "0.7"], ["paper.html", "0.6"],
-    ["journal.html", "0.5"], ["journal-blue-wool.html", "0.4"], ["journal-beitou-sulphur.html", "0.4"],
-    ["faq.html", "0.6"], ["shipping.html", "0.6"], ["stockists.html", "0.4"], ["wholesale.html", "0.4"],
-    ["privacy.html", "0.2"], ["terms.html", "0.2"],
+    ["", "1.0"], ["collection", "0.9"], ["chart", "0.9"],
+    ["single-pans", "0.7"], ["sets", "0.7"], ["paper", "0.6"],
+    ["journal", "0.5"], ["journal-blue-wool", "0.4"], ["journal-beitou-sulphur", "0.4"],
+    ["faq", "0.6"], ["shipping", "0.6"], ["stockists", "0.4"], ["wholesale", "0.4"],
+    ["privacy", "0.2"], ["terms", "0.2"],
   ];
   const urls = STATIC_PAGES.map(([page, pr]) => `  <url><loc>https://yushancolour.com/${page}</loc><priority>${pr}</priority></url>`);
   for (const p of products.filter((p) => p.id !== "single-pan")) {

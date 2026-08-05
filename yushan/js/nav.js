@@ -232,8 +232,8 @@
     if (!toggleBtn || !panel || !input) return;
 
     const JOURNAL = [
-      { title: "How we read a Blue Wool test", url: "journal-blue-wool.html" },
-      { title: "Why Beitou Sulphur has no synthetic equivalent", url: "journal-beitou-sulphur.html" },
+      { title: "How we read a Blue Wool test", url: "journal-blue-wool" },
+      { title: "Why Beitou Sulphur has no synthetic equivalent", url: "journal-beitou-sulphur" },
     ];
 
     function openSearch() {

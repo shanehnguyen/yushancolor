@@ -182,7 +182,7 @@ const Cart = (() => {
           email,
           confirmed: String(confirmed),
         });
-        location.href = `thank-you.html?${params.toString()}`;
+        location.href = `thank-you?${params.toString()}`;
       });
     }
 

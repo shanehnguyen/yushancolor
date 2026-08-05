@@ -3,8 +3,8 @@
    to its own static file (see scripts/prerender.js) rather than served
    through product.html?id=... query params. */
 function productUrl(productId, variantId) {
-  if (productId === "single-pan" && variantId) return `product-single-pan-${variantId}.html`;
-  return `product-${productId}.html`;
+  if (productId === "single-pan" && variantId) return `product-single-pan-${variantId}`;
+  return `product-${productId}`;
 }
 
 const GRANULATION_OPACITY = {

@@ -20,7 +20,7 @@
   banner.setAttribute("role", "region");
   banner.setAttribute("aria-label", "Cookie notice");
   banner.innerHTML = `
-    <p>We use essential cookies to run the cart, and optional cookies for analytics. No ads, nothing sold to third parties. <a href="privacy.html">Privacy policy</a></p>
+    <p>We use essential cookies to run the cart, and optional cookies for analytics. No ads, nothing sold to third parties. <a href="privacy">Privacy policy</a></p>
     <div class="cookie-banner__actions">
       <button type="button" class="btn btn-outline" id="cookie-decline">Decline</button>
       <button type="button" class="btn btn-primary" id="cookie-accept">Accept</button>
